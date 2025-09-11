@@ -1,0 +1,26 @@
+{
+  "name": "where-did-my-ram-go-extension",
+  "version": "1.4.1",
+  "description": "Track your tabs and see how much RAM they're consuming. Because sheep (RAM) can really add up!",
+  "main": "create_store_package.js",
+  "scripts": {
+    "build": "node create_store_package.js",
+    "package": "node create_store_package.js",
+    "validate": "node -e \"require('./create_store_package.js').validateManifest()\""
+  },
+  "keywords": [
+    "chrome-extension",
+    "tab-manager",
+    "memory-tracker",
+    "ram-monitor",
+    "browser-extension"
+  ],
+  "author": "Tab Counter Extension",
+  "license": "MIT",
+  "devDependencies": {
+    "archiver": "^6.0.2"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}

@@ -1,0 +1,204 @@
+# Chrome Extension .gitignore
+# Excludes files that shouldn't be tracked in version control
+
+# ===========================================
+# Node.js Dependencies
+# ===========================================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+yarn.lock
+
+# ===========================================
+# Build Output & Distribution
+# ===========================================
+dist/
+build/
+*.zip
+*.crx
+*.pem
+
+# ===========================================
+# Development & Testing Files
+# ===========================================
+# Temporary development files
+*.tmp
+*.temp
+*.log
+
+# Test files
+test_extension.html
+test_*.html
+*_test.js
+*_test.html
+
+# Development scripts (keep main ones, exclude generated)
+create_icons.js
+generate_icons.html
+create_icons.html
+convert_svg_to_png.html
+convert_to_png.html
+
+# ===========================================
+# IDE & Editor Files
+# ===========================================
+# Visual Studio Code
+.vscode/
+*.code-workspace
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Atom
+.atom/
+
+# WebStorm/IntelliJ
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Vim
+*.swp
+*.swo
+*~
+
+# Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+.\#*
+
+# ===========================================
+# Operating System Files
+# ===========================================
+# macOS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msm
+*.msp
+*.lnk
+
+# Linux
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+# ===========================================
+# Chrome Extension Specific
+# ===========================================
+# Chrome extension keys (NEVER commit these!)
+*.pem
+key.pem
+*.key
+
+# Extension store uploads
+store_upload_*.zip
+chrome_store_*.zip
+
+# Local development overrides
+local_config.js
+dev_config.json
+
+# ===========================================
+# Documentation & Assets (Optional)
+# ===========================================
+# Uncomment if you don't want to track these
+# README.md
+# TESTING_GUIDE.md
+# PACKAGING_GUIDE.md
+
+# Screenshots for store listing
+screenshots/
+store_assets/
+promotional_images/
+
+# ===========================================
+# Backup Files
+# ===========================================
+*.bak
+*.backup
+*.old
+*.orig
+
+# ===========================================
+# Environment & Config
+# ===========================================
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# ===========================================
+# Logs
+# ===========================================
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# ===========================================
+# Coverage & Testing
+# ===========================================
+coverage/
+.nyc_output/
+.coverage/
+*.lcov
+
+# ===========================================
+# Temporary Files
+# ===========================================
+*.tmp
+*.temp
+.tmp/
+.temp/
+
+# ===========================================
+# Package Managers
+# ===========================================
+# Yarn
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+
+# pnpm
+.pnpm-debug.log*
+
+# ===========================================
+# Security
+# ===========================================
+# Never commit these!
+*.pem
+*.key
+*.crt
+*.p12
+secrets.json
+credentials.json
