@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quick Icon Creator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        h1 {
+            color: #667eea;
+            margin-bottom: 20px;
+        }
+        .icon-preview {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+        .icon-size {
+            text-align: center;
+            padding: 10px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            background: white;
+        }
+        .icon-size h3 {
+            margin: 0 0 10px 0;
+            color: #333;
+        }
+        canvas {
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .download-section {
+            text-align: center;
+            margin: 30px 0;
+        }
+        .download-btn {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 5px;
+            transition: background 0.3s;
+        }
+        .download-btn:hover {
+            background: #5a6fd8;
+        }
+        .instructions {
+            background: #e3f2fd;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+            text-align: left;
+        }
+        .instructions h3 {
+            color: #1976d2;
+            margin-top: 0;
+        }
+        .step {
+            margin: 10px 0;
+            padding: 10px;
+            background: white;
+            border-radius: 5px;
+            border-left: 4px solid #1976d2;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🐑 Quick Icon Creator</h1>
+        <p>Generate the missing PNG icons for your Chrome extension</p>
+        
+        <div class="icon-preview">
+            <div class="icon-size">
+                <h3>16x16</h3>
+                <canvas id="icon16" width="16" height="16"></canvas>
+            </div>
+            <div class="icon-size">
+                <h3>32x32</h3>
+                <canvas id="icon32" width="32" height="32"></canvas>
+            </div>
+            <div class="icon-size">
+                <h3>48x48</h3>
+                <canvas id="icon48" width="48" height="48"></canvas>
+            </div>
+            <div class="icon-size">
+                <h3>128x128</h3>
+                <canvas id="icon128" width="128" height="128"></canvas>
+            </div>
+        </div>
+        
+        <div class="download-section">
+            <button class="download-btn" onclick="downloadIcon(16)">Download 16x16</button>
+            <button class="download-btn" onclick="downloadIcon(32)">Download 32x32</button>
+            <button class="download-btn" onclick="downloadIcon(48)">Download 48x48</button>
+            <button class="download-btn" onclick="downloadIcon(128)">Download 128x128</button>
+        </div>
+        
+        <div class="instructions">
+            <h3>📋 Instructions:</h3>
+            <div class="step">
+                <strong>1. Download Icons:</strong> Click all 4 download buttons above
+            </div>
+            <div class="step">
+                <strong>2. Save Files:</strong> Save them in your <code>icons/</code> folder with these exact names:
+                <ul>
+                    <li><code>icon16.png</code></li>
+                    <li><code>icon32.png</code></li>
+                    <li><code>icon48.png</code></li>
+                    <li><code>icon128.png</code></li>
+                </ul>
+            </div>
+            <div class="step">
+                <strong>3. Reload Extension:</strong> Go to <code>chrome://extensions/</code> and reload your extension
+            </div>
+            <div class="step">
+                <strong>4. Test:</strong> The extension should now load without errors!
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Generate icons on page load
+        window.onload = function() {
+            generateIcons();
+        };
+
+        function generateIcons() {
+            const sizes = [16, 32, 48, 128];
+            
+            sizes.forEach(size => {
+                const canvas = document.getElementById(`icon${size}`);
+                const ctx = canvas.getContext('2d');
+                
+                // Create a simple sheep icon
+                drawSheepIcon(ctx, size);
+            });
+        }
+
+        function drawSheepIcon(ctx, size) {
+            const scale = size / 128; // Scale everything relative to 128px
+            
+            // Background circle
+            ctx.fillStyle = '#667eea';
+            ctx.beginPath();
+            ctx.arc(size/2, size/2, size/2 - 2, 0, 2 * Math.PI);
+            ctx.fill();
+            
+            // Border
+            ctx.strokeStyle = '#764ba2';
+            ctx.lineWidth = 2 * scale;
+            ctx.stroke();
+            
+            // Sheep body
+            ctx.fillStyle = 'white';
+            ctx.globalAlpha = 0.9;
+            ctx.beginPath();
+            ctx.ellipse(size/2, size/2 + 8*scale, 20*scale, 16*scale, 0, 0, 2 * Math.PI);
+            ctx.fill();
+            
+            // Sheep head
+            ctx.beginPath();
+            ctx.arc(size/2, size/2 - 12*scale, 12*scale, 0, 2 * Math.PI);
+            ctx.fill();
+            
+            // Eyes
+            ctx.fillStyle = 'black';
+            ctx.globalAlpha = 1;
+            ctx.beginPath();
+            ctx.arc(size/2 - 4*scale, size/2 - 16*scale, 1.5*scale, 0, 2 * Math.PI);
+            ctx.fill();
+            ctx.beginPath();
+            ctx.arc(size/2 + 4*scale, size/2 - 16*scale, 1.5*scale, 0, 2 * Math.PI);
+            ctx.fill();
+            
+            // Nose
+            ctx.beginPath();
+            ctx.ellipse(size/2, size/2 - 12*scale, 1.5*scale, 1*scale, 0, 0, 2 * Math.PI);
+            ctx.fill();
+            
+            // Memory bars (small)
+            if (size >= 32) {
+                ctx.fillStyle = '#4CAF50';
+                ctx.globalAlpha = 0.8;
+                ctx.fillRect(8*scale, 8*scale, 3*scale, 8*scale);
+                ctx.fillStyle = '#FF9800';
+                ctx.fillRect(12*scale, 6*scale, 3*scale, 10*scale);
+                ctx.fillStyle = '#F44336';
+                ctx.fillRect(16*scale, 4*scale, 3*scale, 12*scale);
+            }
+        }
+
+        function downloadIcon(size) {
+            const canvas = document.getElementById(`icon${size}`);
+            const link = document.createElement('a');
+            link.download = `icon${size}.png`;
+            link.href = canvas.toDataURL();
+            link.click();
+        }
+    </script>
+</body>
+</html>

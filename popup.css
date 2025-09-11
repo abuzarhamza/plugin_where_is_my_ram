@@ -1,0 +1,232 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #333;
+    min-height: 500px;
+    width: 350px;
+}
+
+.container {
+    padding: 20px;
+    min-height: 500px;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+header h1 {
+    font-size: 20px;
+    color: white;
+    margin-bottom: 5px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.subtitle {
+    color: rgba(255,255,255,0.8);
+    font-size: 12px;
+}
+
+.stats-container {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.stat-card {
+    flex: 1;
+    background: rgba(255,255,255,0.95);
+    border-radius: 12px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+.stat-icon {
+    font-size: 24px;
+    margin-bottom: 8px;
+}
+
+.stat-number {
+    font-size: 24px;
+    font-weight: bold;
+    color: #4a5568;
+    margin-bottom: 4px;
+}
+
+.stat-label {
+    font-size: 11px;
+    color: #718096;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.memory-breakdown {
+    background: rgba(255,255,255,0.95);
+    border-radius: 12px;
+    padding: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+.memory-breakdown h3 {
+    font-size: 14px;
+    color: #4a5568;
+    margin-bottom: 12px;
+    text-align: center;
+}
+
+.memory-list {
+    max-height: 150px;
+    overflow-y: auto;
+}
+
+.memory-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid #e2e8f0;
+    font-size: 12px;
+}
+
+.memory-item:last-child {
+    border-bottom: none;
+}
+
+.tab-title {
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: #4a5568;
+    margin-right: 10px;
+}
+
+.memory-amount {
+    color: #e53e3e;
+    font-weight: bold;
+    font-size: 11px;
+    margin-right: 8px;
+}
+
+.last-accessed {
+    color: #718096;
+    font-size: 10px;
+    font-style: italic;
+    min-width: 50px;
+    text-align: right;
+}
+
+.loading {
+    text-align: center;
+    color: #718096;
+    font-style: italic;
+    padding: 20px;
+}
+
+.actions {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.btn {
+    flex: 1;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #4299e1, #3182ce);
+    color: white;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #3182ce, #2c5282);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(49, 130, 206, 0.4);
+}
+
+.btn-secondary {
+    background: linear-gradient(135deg, #ed8936, #dd6b20);
+    color: white;
+}
+
+.btn-secondary:hover {
+    background: linear-gradient(135deg, #dd6b20, #c05621);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(221, 107, 32, 0.4);
+}
+
+.btn-tertiary {
+    background: linear-gradient(135deg, #9f7aea, #805ad5);
+    color: white;
+}
+
+.btn-tertiary:hover {
+    background: linear-gradient(135deg, #805ad5, #6b46c1);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(128, 90, 213, 0.4);
+}
+
+footer {
+    margin-top: auto;
+    text-align: center;
+}
+
+.fun-fact {
+    color: rgba(255,255,255,0.8);
+    font-size: 11px;
+    font-style: italic;
+    line-height: 1.4;
+}
+
+/* Scrollbar styling */
+.memory-list::-webkit-scrollbar {
+    width: 4px;
+}
+
+.memory-list::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 2px;
+}
+
+.memory-list::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 2px;
+}
+
+.memory-list::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+}
+
+/* Animation for stat numbers */
+.stat-number {
+    transition: all 0.3s ease;
+}
+
+.stat-number.updating {
+    transform: scale(1.1);
+    color: #4299e1;
+}

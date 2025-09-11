@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Where Did My RAM Go? 🐑</title>
+    <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🐑 Where Did My RAM Go?</h1>
+            <p class="subtitle">Track your tabs and memory usage</p>
+        </header>
+        
+        <div class="stats-container">
+            <div class="stat-card">
+                <div class="stat-icon">📊</div>
+                <div class="stat-info">
+                    <div class="stat-number" id="tabCount">0</div>
+                    <div class="stat-label">Open Tabs</div>
+                </div>
+            </div>
+            
+            <div class="stat-card">
+                <div class="stat-icon">💾</div>
+                <div class="stat-info">
+                    <div class="stat-number" id="memoryUsage">0 MB</div>
+                    <div class="stat-label">Memory Used</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="memory-breakdown">
+            <h3>🐑 Memory Breakdown</h3>
+            <div id="memoryList" class="memory-list">
+                <div class="loading">Loading memory data...</div>
+            </div>
+        </div>
+        
+        <div class="actions">
+            <button id="refreshBtn" class="btn btn-primary">🔄 Refresh</button>
+            <button id="closeTabsBtn" class="btn btn-secondary">🗑️ Close Duplicates</button>
+            <button id="killTabsBtn" class="btn btn-tertiary">💀 Kill Tabs</button>
+        </div>
+        
+        <footer>
+            <p class="fun-fact" id="funFact">💡 Fun fact: Each tab is like a little sheep eating your RAM!</p>
+            <p class="api-status" id="apiStatus" style="font-size: 10px; color: rgba(255,255,255,0.6); margin-top: 5px;">
+                📊 Using estimated memory data (Chrome Dev/Canary for real data)
+            </p>
+        </footer>
+    </div>
+    
+    <script src="popup.js"></script>
+</body>
+</html>
