@@ -10,45 +10,43 @@
     <div class="container">
         <header>
             <h1>🐑 Where Did My RAM Go?</h1>
-            <p class="subtitle">Track your tabs and memory usage</p>
+            <p class="subtitle">Tab Counter & Manager</p>
         </header>
         
-        <div class="stats-container">
-            <div class="stat-card">
-                <div class="stat-icon">📊</div>
-                <div class="stat-info">
-                    <div class="stat-number" id="tabCount">0</div>
+        <main>
+            <div class="stats">
+                <div class="stat-card">
+                    <div class="stat-value" id="tabCount">0</div>
                     <div class="stat-label">Open Tabs</div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-value" id="lastWindowTime">--:--</div>
+                    <div class="stat-label">Last Window Opened</div>
                 </div>
             </div>
             
-            <div class="stat-card">
-                <div class="stat-icon">💾</div>
-                <div class="stat-info">
-                    <div class="stat-number" id="memoryUsage">0 MB</div>
-                    <div class="stat-label">Memory Used</div>
+            <div class="actions">
+                <button id="refreshBtn" class="btn btn-primary">🔄 Refresh</button>
+                <button id="showTabsBtn" class="btn btn-secondary">📋 Show All Tabs</button>
+                <button id="killDuplicatesBtn" class="btn btn-danger">🗑️ Kill Duplicates</button>
+                <button id="taskManagerBtn" class="btn btn-tertiary">⚙️ Task Manager</button>
+            </div>
+            
+            <!-- Tab List Section -->
+            <div id="tabListSection" class="tab-list-section" style="display: none;">
+                <div class="tab-list-header">
+                    <h3>📋 All Open Tabs</h3>
+                    <button id="closeTabListBtn" class="btn-close">✕</button>
+                </div>
+                <div id="tabList" class="tab-list">
+                    <!-- Tabs will be populated here -->
                 </div>
             </div>
-        </div>
-        
-        <div class="memory-breakdown">
-            <h3>🐑 Memory Breakdown</h3>
-            <div id="memoryList" class="memory-list">
-                <div class="loading">Loading memory data...</div>
-            </div>
-        </div>
-        
-        <div class="actions">
-            <button id="refreshBtn" class="btn btn-primary">🔄 Refresh</button>
-            <button id="closeTabsBtn" class="btn btn-secondary">🗑️ Close Duplicates</button>
-            <button id="killTabsBtn" class="btn btn-tertiary">💀 Kill Tabs</button>
-        </div>
+        </main>
         
         <footer>
             <p class="fun-fact" id="funFact">💡 Fun fact: Each tab is like a little sheep eating your RAM!</p>
-            <p class="api-status" id="apiStatus" style="font-size: 10px; color: rgba(255,255,255,0.6); margin-top: 5px;">
-                📊 Using estimated memory data (Chrome Dev/Canary for real data)
-            </p>
         </footer>
     </div>
     

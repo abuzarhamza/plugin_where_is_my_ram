@@ -23,6 +23,7 @@ const CONFIG = {
 		"popup.css",
 		"popup.js",
 		"background.js",
+		"task-manager-help.html",
 	],
 
 	// Directories to include
