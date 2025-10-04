@@ -34,7 +34,7 @@
   },
   "web_accessible_resources": [
     {
-      "resources": ["task-manager-help.html"],
+      "resources": ["task-manager-help.html", "task-manager-help.js"],
       "matches": ["<all_urls>"]
     }
   ]
