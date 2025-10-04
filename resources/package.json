@@ -1,16 +1,13 @@
 {
   "name": "where-did-my-ram-go-extension",
-  "version": "1.4.1",
+  "version": "1.5.0",
   "description": "Track your tabs and see how much RAM they're consuming. Because sheep (RAM) can really add up!",
   "main": "create_store_package.js",
   "scripts": {
-    "build": "node create_store_package.js",
-    "package": "node create_store_package.js",
-    "validate": "node -e \"require('./create_store_package.js').validateManifest()\"",
-    "complexity": "node generate_complexity_report.js",
-    "simple-complexity": "node simple_complexity_report.js",
-    "advanced-complexity": "node advanced_complexity_report.js",
-    "report": "npm run advanced-complexity"
+    "build": "node resources/create_store_package.js",
+    "package": "node resources/create_store_package.js",
+    "validate": "node -e \"require('./resources/create_store_package.js').validateManifest()\"",
+    "shell-package": "bash resources/create_store_package.sh"
   },
   "keywords": [
     "chrome-extension",

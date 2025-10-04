@@ -12,9 +12,9 @@ const archiver = require("archiver");
 // Configuration
 const CONFIG = {
 	extensionName: "Where Did My RAM Go",
-	version: "1.4.1",
+	version: "1.5.0",
 	outputDir: "./dist",
-	outputFile: "tab-counter-extension-v1.4.1.zip",
+	outputFile: "tab-counter-extension-v1.5.0.zip",
 
 	// Files to include in the package
 	includeFiles: [
@@ -24,27 +24,24 @@ const CONFIG = {
 		"popup.js",
 		"background.js",
 		"task-manager-help.html",
+		"task-manager-help.js",
 	],
 
 	// Directories to include
 	includeDirs: ["icons"],
 
-	// Files to exclude
+	// Files and directories to exclude
 	excludeFiles: [
-		"create_store_package.js",
-		"generate_icons.html",
-		"create_icons.html",
-		"create_icons.js",
-		"convert_svg_to_png.html",
-		"convert_to_png.html",
+		"resources",
+		"docs",
 		"test_extension.html",
 		"README.md",
-		"TESTING_GUIDE.md",
 		".git",
 		".gitignore",
 		"node_modules",
 		"package.json",
 		"package-lock.json",
+		"dist",
 	],
 };
 

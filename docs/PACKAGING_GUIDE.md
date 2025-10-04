@@ -1,8 +1,8 @@
-# 📦 Chrome Web Store Packaging Guide
+# Chrome Web Store Packaging Guide
 
 This guide helps you create a zip package ready for Google Chrome Web Store submission.
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Option 1: Node.js Script (Recommended)
 ```bash
@@ -22,15 +22,15 @@ chmod +x create_store_package.sh
 ./create_store_package.sh
 ```
 
-## 📋 What the Scripts Do
+## What the Scripts Do
 
-### ✅ Validation Checks
+### Validation Checks
 - **Manifest Version**: Ensures manifest.json uses version 3
 - **Required Fields**: Validates name, version, and description
 - **Icons**: Checks for required icon sizes (16x16, 32x32, 48x48, 128x128)
 - **File Structure**: Verifies all extension files exist
 
-### 📦 Package Creation
+### Package Creation
 - Creates a `dist/` directory
 - Generates `tab-counter-extension-v1.4.1.zip`
 - Includes only necessary files:
@@ -43,7 +43,7 @@ chmod +x create_store_package.sh
   - Git files, node_modules
   - Temporary files
 
-## 📁 Output Structure
+## Output Structure
 
 ```
 dist/
@@ -60,21 +60,21 @@ dist/
         └── icon128.png
 ```
 
-## 🎯 Chrome Web Store Requirements
+## Chrome Web Store Requirements
 
-### ✅ Manifest Requirements
+### Manifest Requirements
 - [x] Manifest version 3
 - [x] Name, version, description
 - [x] Required permissions
 - [x] Icons in multiple sizes
 
-### ✅ File Requirements
+### File Requirements
 - [x] All extension files included
 - [x] No development files
 - [x] Proper file structure
 - [x] Optimized package size
 
-## 📝 Submission Checklist
+## Submission Checklist
 
 Before uploading to Chrome Web Store:
 
@@ -84,7 +84,7 @@ Before uploading to Chrome Web Store:
 - [ ] **Files Included**: All extension files, no dev files
 - [ ] **Size Checked**: Package under 10MB (usually much smaller)
 
-## 🔗 Next Steps
+## Next Steps
 
 1. **Go to Chrome Web Store Developer Dashboard**
    - Visit: https://chrome.google.com/webstore/devconsole/
@@ -107,7 +107,7 @@ Before uploading to Chrome Web Store:
    - Submit for Chrome Web Store review
    - Wait for approval (usually 1-3 days)
 
-## 🛠️ Troubleshooting
+## Troubleshooting
 
 ### Missing Icons
 If you get warnings about missing icons:
@@ -129,7 +129,7 @@ If manifest validation fails:
 - Ensure all required fields are present
 - Verify manifest version is 3
 
-## 📊 Package Information
+## Package Information
 
 - **Extension Name**: Where Did My RAM Go? 🐑
 - **Version**: 1.4.1
@@ -138,15 +138,15 @@ If manifest validation fails:
 - **Estimated Size**: < 1MB
 - **Permissions**: tabs, processes, activeTab
 
-## 🎉 Success!
+## Success!
 
 Once your package is created successfully, you'll see:
 ```
-✅ Package created successfully!
-📦 File: tab-counter-extension-v1.4.1.zip
-📁 Location: dist/
-📊 Size: X.XX MB
-🎉 Ready for Chrome Web Store submission!
+Package created successfully!
+File: tab-counter-extension-v1.4.1.zip
+Location: dist/
+Size: X.XX MB
+Ready for Chrome Web Store submission!
 ```
 
-Your extension is now ready for the Chrome Web Store! 🚀
+Your extension is now ready for the Chrome Web Store!

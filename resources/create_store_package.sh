@@ -7,7 +7,7 @@ set -e  # Exit on any error
 
 # Configuration
 EXTENSION_NAME="Where Did My RAM Go"
-VERSION="1.4.1"
+VERSION="1.5.0"
 OUTPUT_DIR="./dist"
 OUTPUT_FILE="tab-counter-extension-v${VERSION}.zip"
 
@@ -122,6 +122,8 @@ create_zip_package() {
         "popup.css"
         "popup.js"
         "background.js"
+        "task-manager-help.html"
+        "task-manager-help.js"
     )
     
     for file in "${files[@]}"; do
@@ -139,8 +141,10 @@ create_zip_package() {
         popup.css \
         popup.js \
         background.js \
+        task-manager-help.html \
+        task-manager-help.js \
         icons/ \
-        -x "*.DS_Store" "*.git*" "node_modules/*" "*.md" "*.html" "*.js" "create_*" "test_*" "generate_*" "convert_*"
+        -x "*.DS_Store" "*.git*" "node_modules/*" "*.md" "resources/*" "docs/*" "test_*" "dist/*"
     
     # Get file size
     local file_size=$(du -h "$output_path" | cut -f1)

@@ -5,7 +5,7 @@
   "description": "Simple tab counter with last window time and Chrome Task Manager access",
   "minimum_chrome_version": "139.0.7258.155",
   "author": "Tab Counter Extension",
-  "homepage_url": "https://github.com/yourusername/tabCounter",
+  "homepage_url": "https://github.com/abuzarhamza/plugin_where_is_my_ram",
   "permissions": [
     "activeTab",
     "tabs"
