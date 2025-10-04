@@ -1,4 +1,4 @@
-# Where Did My RAM Go? - Chrome Extension v1.1.0
+# 🐑 Where Did My RAM Go? - Chrome Extension v1.1.0
 
 A fun and useful Chrome extension that tracks your open tabs and close it. Help page to see ur task manager.
 
@@ -15,9 +15,6 @@ A fun and useful Chrome extension that tracks your open tabs and close it. Help 
 - **Manifest Version**: 3 (Chrome Extensions Manifest V3)
 - **Permissions**: tabs, activeTab
 
-## Testing
-
-**Quick Test Guide**: See `TESTING_GUIDE.md` for detailed step-by-step testing instructions.
 
 **Quick Start**:
 
@@ -54,7 +51,7 @@ A fun and useful Chrome extension that tracks your open tabs and close it. Help 
 3. **Pin Extension**:
 
    - Click the puzzle piece icon in Chrome toolbar
-   - Find "Where Did My RAM Go?" and click the pin icon
+   - Find "Where Did My RAM Go? 🐑" and click the pin icon
    - The sheep icon will now appear in your toolbar
 
 ### Method 2: Package and Install
@@ -71,14 +68,14 @@ A fun and useful Chrome extension that tracks your open tabs and close it. Help 
    - Estimated total memory usage
    - Memory breakdown by tab
 
-2. **Refresh Data**: Click the "Refresh" button to update statistics
+2. **Refresh Data**: Click the "🔄 Refresh" button to update statistics
 
-3. **Clean Duplicates**: Click "Close Duplicates" to remove tabs with the same URL
+3. **Clean Duplicates**: Click "🗑️ Close Duplicates" to remove tabs with the same URL
 
 4. **Monitor Badge**: The extension badge shows your current tab count with color coding:
-   - Green: 1-20 tabs (healthy)
-   - Orange: 21-50 tabs (getting crowded)
-   - Red: 50+ tabs (sheep overload!)
+   - 🟢 Green: 1-20 tabs (healthy)
+   - 🟠 Orange: 21-50 tabs (getting crowded)
+   - 🔴 Red: 50+ tabs (sheep overload!)
 
 
 ### Files Structure
@@ -104,7 +101,7 @@ plugin_where_is_my_ram/
 - `tabs`: To count and manage tabs
 - `activeTab`: To get current tab information
 
-## Customization
+## 🎨 Customization
 
 ### Changing the Theme
 
@@ -124,7 +121,7 @@ Edit the `funFacts` array in `popup.js`:
 
 ```javascript
 const funFacts = [
-    "Your custom fun fact here!",
+    "💡 Your custom fun fact here!",
     // ... more facts
 ];
 ```
@@ -173,6 +170,6 @@ Share the link with your instructor!
 
 ---
 
-**Made with sheep and lots of RAM!**
+**Made with 🐑 and lots of RAM!**
 
 *Remember: Every tab is a sheep, and too many sheep can make your computer feel like a crowded pasture!*
